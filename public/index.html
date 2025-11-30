@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#9333EA" />
+    <meta
+      name="description"
+      content="Push Chain Roulette - Provably fair on-chain roulette game. Win up to 1 PC per spin!"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yoursite.com/" />
+    <meta property="og:title" content="Push Chain Roulette - Win PC Tokens" />
+    <meta property="og:description" content="Provably fair on-chain roulette. 1 spin = 0.1 PC. Win up to 1 PC!" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://yoursite.com/" />
+    <meta property="twitter:title" content="Push Chain Roulette - Win PC Tokens" />
+    <meta property="twitter:description" content="Provably fair on-chain roulette. 1 spin = 0.1 PC. Win up to 1 PC!" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/twitter-image.png" />
+    
+    <title>Push Chain Roulette - Provably Fair On-Chain Gaming</title>
+    
+    <!-- Preconnect to Push Chain RPC -->
+    <link rel="preconnect" href="https://rpc.testnet.push.org" />
+    <link rel="dns-prefetch" href="https://rpc.testnet.push.org" />
+    
+    <!-- Inline critical CSS for faster initial render -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+        color: white;
+        min-height: 100vh;
+      }
+      
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+          monospace;
+      }
+      
+      /* Loading screen */
+      #root-loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+      }
+      
+      #root-loading.loaded {
+        display: none;
+      }
+      
+      .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 6px solid rgba(147, 51, 234, 0.2);
+        border-top-color: #9333EA;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      .loading-text {
+        margin-top: 20px;
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 600;
+      }
+      
+      .loading-subtext {
+        margin-top: 10px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      
+      /* Hide scrollbar but keep functionality */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: rgba(147, 51, 234, 0.5);
+        border-radius: 4px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(147, 51, 234, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Loading Screen (shown while React loads) -->
+    <div id="root-loading">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading Push Chain Roulette...</div>
+      <div class="loading-subtext">Connecting to Push Chain Testnet</div>
+    </div>
+    
+    <!-- React App Root -->
+    <div id="root"></div>
+    
+    <!-- Script to hide loading screen when React loads -->
+    <script>
+      window.addEventListener('load', function() {
+        // Give React a moment to render
+        setTimeout(function() {
+          const loading = document.getElementById('root-loading');
+          if (loading) {
+            loading.classList.add('loaded');
+          }
+        }, 500);
+      });
+      
+      // Fallback: hide loading screen after 5 seconds regardless
+      setTimeout(function() {
+        const loading = document.getElementById('root-loading');
+        if (loading) {
+          loading.classList.add('loaded');
+        }
+      }, 5000);
+    </script>
+    
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start`.
+      To create a production bundle, use `npm run build`.
+    -->
+  </body>
+</html>
