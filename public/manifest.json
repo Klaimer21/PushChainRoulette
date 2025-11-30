@@ -1,0 +1,35 @@
+{
+  "short_name": "PC Roulette",
+  "name": "Push Chain Roulette - Provably Fair Gaming",
+  "description": "Spin the wheel and win PC tokens on Push Chain. Provably fair on-chain roulette.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#9333EA",
+  "background_color": "#1a1a2e",
+  "orientation": "portrait-primary",
+  "categories": ["games", "entertainment", "finance"],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    }
+  ]
+}
