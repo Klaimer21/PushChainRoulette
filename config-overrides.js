@@ -15,10 +15,13 @@ module.exports = function override(config, env) {
   
   config.plugins = (config.plugins || []).concat([
     new webpack.ProvidePlugin({
-      process: 'process/browser',
+      process: 'process/browser.js', // Исправлен путь
       Buffer: ['buffer', 'Buffer']
     })
   ]);
+  
+  // Добавляем расширения для разрешения
+  config.resolve.extensions = [...config.resolve.extensions, ".js", ".jsx"];
   
   return config;
 };
