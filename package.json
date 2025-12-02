@@ -18,8 +18,8 @@
     "hardhat": "^2.19.0",
     "dotenv": "^16.3.1",
     "browser": {
-    "crypto": false
-    },
+      "crypto": false
+    }
   },
   "scripts": {
     "start": "react-scripts start",
